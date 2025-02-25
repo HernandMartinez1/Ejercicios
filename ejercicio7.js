@@ -1,3 +1,4 @@
+do{
 let genero = prompt("Ingrese su genero (femenino/masculino):").toLowerCase();
 let edad = parseInt(prompt("Ingrese su edad:"));
 
@@ -16,4 +17,6 @@ if (genero === "femenino") {
     ayuda = "Genero no valido";
 }
 
-console.log(`El valor de ayuda mensual es: $${ayuda}.`);
+alert(`El valor de ayuda mensual es: $${ayuda}.`);
+continuar = true
+}while(continuar == true)

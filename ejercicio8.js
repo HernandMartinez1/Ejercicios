@@ -1,3 +1,4 @@
+do{
 let dias = parseInt(prompt("Ingrese el número de días de la mensualidad (15, 30 o 90):"));
 let costoMensualidad;
 
@@ -11,4 +12,6 @@ if (dias === 15) {
     costoMensualidad = "Opción no valida";
 }
 
-console.log(`El costo de la mensualidad para ${dias} dias es: $${costoMensualidad}.`);
+alert(`El costo de la mensualidad para ${dias} dias es: $${costoMensualidad}.`);
+continuar = true
+}while(continuar == true)

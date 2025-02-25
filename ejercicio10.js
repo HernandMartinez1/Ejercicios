@@ -1,3 +1,4 @@
+do{
 let copias = parseInt(prompt("Ingrese el numero de copias a imprimir:"));
 let precioPorCopia;
 
@@ -12,4 +13,6 @@ if (copias >= 0 && copias <= 499) {
 }
 
 let precioTotal = copias * precioPorCopia;
-console.log(`El precio por copia es $${precioPorCopia} y el precio total es $${precioTotal}.`);
+alert(`El precio por copia es $${precioPorCopia} y el precio total es $${precioTotal}.`);
+continuar = true
+}while(continuar == true)

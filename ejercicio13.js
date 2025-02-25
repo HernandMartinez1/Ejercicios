@@ -1,3 +1,4 @@
+do{
 let operador = prompt("Ingrese su operador (Tigo, Claro, Movistar):").toLowerCase();
 let minutos = parseInt(prompt("Ingrese la cantidad de minutos internacionales usados:"));
 
@@ -15,8 +16,10 @@ if (operador === "tigo") {
     valorMinuto = 250;
     valorPaquete = 8000;
 } else {
-    console.log("Operador no valido");
+    alert("Operador no valido");
 }
 
 let totalPagar = cargoFijo + (minutos * valorMinuto);
-console.log(`El costo total para el operador ${operador} con ${minutos} minutos es: $${totalPagar}.`);
+alert(`El costo total para el operador ${operador} con ${minutos} minutos es: $${totalPagar}.`);
+continuar = prompt("Desea hacer otra operacion? (si/no)").toLowerCase();
+}while (continuar === "si")

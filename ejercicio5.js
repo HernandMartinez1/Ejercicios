@@ -1,8 +1,14 @@
-let fisica = 7;
-let quimica = 8;
-let biologia = 6;
-let matematicas = 9;
-let informatica = 7;
+do{
+fisica = parseFloat(prompt("Ingresa tu nota de fisica"));
+quimica = parseFloat(prompt("Ingresa tu nota de quimica"));
+biologia = parseFloat(prompt("Ingresa tu nota de biologia"));
+matematicas = parseFloat(prompt("Ingresa tu nota de matematicas"));
+informatica = parseFloat(prompt("Ingresa tu nota de informatica"));
+
+if (isNaN(fisica) || isNaN(quimica) || isNaN(biologia) || isNaN(matematicas) || isNaN(informatica)) {
+    alert("Por favor, ingresa solo números válidos.");
+    continue; // Repite el bucle sin procesar el calculo
+}
 
 let sumaCalificaciones = fisica + quimica + biologia + matematicas + informatica;
 let porcentaje = (sumaCalificaciones / 50) * 100;
@@ -17,4 +23,6 @@ if (porcentaje < 60) {
     calificacion = "Excelente";
 }
 
-console.log(`Tu porcentaje es ${porcentaje.toFixed(2)}% y tu calificación es ${calificacion}.`);
+alert(`Tu nota es de ${porcentaje} y es ${calificacion}.`);
+OtrasNotas = prompt("Desea ingresar diferentes notas? (si/no)").toLowerCase();
+}while(OtrasNotas === "si")
