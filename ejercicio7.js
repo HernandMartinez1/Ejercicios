@@ -1,22 +1,45 @@
-do{
-let genero = prompt("Ingrese su genero (femenino/masculino):").toLowerCase();
-let edad = parseInt(prompt("Ingrese su edad:"));
+function obtenerDatos() {
+    let genero = prompt("Ingrese su genero (femenino/masculino)").toLowerCase()
+    let edad = parseInt(prompt("Ingrese su edad"))
 
-let ayuda;
-if (genero === "femenino") {
-    if (edad > 50) {
-        ayuda = 120000;
-    } else if (edad >= 30) {
-        ayuda = 100000;
-    } else {
-        ayuda = 0;
+    if (isNaN(edad)) {
+        alert("Por favor ingresa una edad valida")
+        return null
     }
-} else if (genero === "masculino") {
-    ayuda = 40000;
-} else {
-    ayuda = "Genero no valido";
+
+    return { genero, edad }
 }
 
-alert(`El valor de ayuda mensual es: $${ayuda}.`);
-continuar = true
-}while(continuar == true)
+function calcularAyuda(datos) {
+    let ayuda
+    if (datos.genero === "femenino") {
+        if (datos.edad > 50) {
+            ayuda = 120000
+        } else if (datos.edad >= 30) {
+            ayuda = 100000
+        } else {
+            ayuda = 0
+        }
+    } else if (datos.genero === "masculino") {
+        ayuda = 40000
+    } else {
+        ayuda = "Genero no valido"
+    }
+    return ayuda
+}
+
+function mostrarAyuda(ayuda) {
+    alert(`El valor de ayuda mensual es $${ayuda}`)
+}
+
+do {
+    let datos = obtenerDatos()
+    if (datos === null) {
+        continue 
+    }
+
+    let ayuda = calcularAyuda(datos)
+    mostrarAyuda(ayuda)
+
+    continuar = prompt("Desea ingresar otros datos (si/no)").toLowerCase() === "si"
+} while (continuar)

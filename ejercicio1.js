@@ -1,14 +1,19 @@
+function calcularSalario(horas) {
+    let tarifaporhora = horas <= 10 ? 30000 : 33000;
+    return horas * tarifaporhora;
+}
 
-
-let nombre1 = prompt("cual es tu nombre");
-let horas1 = parseInt(prompt("cuantas horas trabajaste"));
-let tarifaporhora = horas1 <= 10 ? 30000 : 33000;
-let salario = horas1 * tarifaporhora;
-let mensaje1;
-
-
-
-if (horas1 <= 15 && horas1 >= 0){
-    mensaje1 = `Señor/a ${nombre1}, el numero de horas es ${horas1} y su salario equivale a ${salario}`;
-};
-alert(mensaje1)
+function mostrarMensaje(nombre, horas, salario) {
+    if (horas <= 15 && horas >= 0) {
+        let mensaje = `Señor/a ${nombre}, el numero de horas es ${horas} y su salario equivale a ${salario}`;
+        alert(mensaje);
+    } else {
+        alert("Numero de horas no valido");
+    }
+}
+do{
+let nombre1 = prompt("¿Cual es tu nombre?");
+let horas1 = parseInt(prompt("¿Cuantas horas trabajaste?"));
+let salario = calcularSalario(horas1);
+mostrarMensaje(nombre1, horas1, salario);
+}while(true)
